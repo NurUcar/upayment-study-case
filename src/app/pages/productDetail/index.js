@@ -12,13 +12,20 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
 
 
-    const {productDetail, errorMessage, infoMessage} = useSelector((state) => state.products);
+    const {productDetail, errorMessage} = useSelector((state) => state.products);
 
     useEffect(() =>{
         dispatch(ProductsActions.getProductDetail(params.id));
-    },[]);
+    },[params.id]);
 
-    console.log(productDetail.product)
+    useEffect(() => {
+        if (errorMessage) {
+            notify.error(errorMessage);
+            dispatch(ProductsActions.setErrorMessage(""));
+            dispatch(ProductsActions.getProductDetail(params.id));  
+        }
+    }, [errorMessage]);
+
     return(
         <div className="card">
             <TopBar/>
