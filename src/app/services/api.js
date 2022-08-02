@@ -1,11 +1,12 @@
 import axios from "axios";
+import config from "../config";
 
 const getCategories = async () => {
     const url = `https://upayments-studycase-api.herokuapp.com/api/categories/`;
     const res = await axios.get(url, {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cjB1Y2FyQGdtYWlsLmNvbSIsImdpdGh1YiI6Imh0dHBzOi8vZ2l0aHViLmNvbS9OdXJVY2FyIiwiaWF0IjoxNjU5MzUyODczLCJleHAiOjE2NTk3ODQ4NzN9.oX0L68ypthoolWVpJ33iCYzBqnfSOmBXGiHSTFJsaaU"
+            "Authorization": "Bearer " + config.accessToken
         }
     });
     return res.data;
@@ -16,7 +17,7 @@ const createProduct = async (data) => {
     const res = await axios.post(url, data, {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cjB1Y2FyQGdtYWlsLmNvbSIsImdpdGh1YiI6Imh0dHBzOi8vZ2l0aHViLmNvbS9OdXJVY2FyIiwiaWF0IjoxNjU5MzUyODczLCJleHAiOjE2NTk3ODQ4NzN9.oX0L68ypthoolWVpJ33iCYzBqnfSOmBXGiHSTFJsaaU"
+            "Authorization": "Bearer " + config.accessToken
         }
     });
     return res.data;
@@ -27,7 +28,7 @@ const getProducts = async () => {
     const res = await axios.get(url, {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cjB1Y2FyQGdtYWlsLmNvbSIsImdpdGh1YiI6Imh0dHBzOi8vZ2l0aHViLmNvbS9OdXJVY2FyIiwiaWF0IjoxNjU5MzUyODczLCJleHAiOjE2NTk3ODQ4NzN9.oX0L68ypthoolWVpJ33iCYzBqnfSOmBXGiHSTFJsaaU"
+            "Authorization": "Bearer " + config.accessToken
         }
     });
     return res.data;
@@ -38,7 +39,7 @@ const getProductDetail = async (id) =>{
     const res = await axios.get(url, {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cjB1Y2FyQGdtYWlsLmNvbSIsImdpdGh1YiI6Imh0dHBzOi8vZ2l0aHViLmNvbS9OdXJVY2FyIiwiaWF0IjoxNjU5MzUyODczLCJleHAiOjE2NTk3ODQ4NzN9.oX0L68ypthoolWVpJ33iCYzBqnfSOmBXGiHSTFJsaaU"
+            "Authorization": "Bearer " + config.accessToken
         }
     });
 
