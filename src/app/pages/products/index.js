@@ -34,7 +34,6 @@ const Products = () => {
             dispatch(CategoriesActions.getCategories());
     },[categories]);
 
-    console.log(productList)
     useEffect(() => {
         if (errorMessage) {
             notify.error(errorMessage);

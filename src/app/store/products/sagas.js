@@ -5,7 +5,6 @@ import api from "../../services/api";
 
 function* createProduct({avatar, category, description, developerEmail, name, price}) {
   
-    console.log("here")
     try {
         yield put(ProductsActions.setLoading(true));
         yield call(api.createProduct, {avatar, category, description, developerEmail, name, price});
